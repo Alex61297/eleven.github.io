@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        /* 基础样式 */
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* 导航栏 */
+        nav {
+            background-color: #2d3748;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* 单篇博客卡片 */
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 1.5rem;
+        }
+
+        /* 博客封面图 */
+        .blog-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        /* 博客内容区 */
+        .blog-category {
+            display: inline-block;
+            background-color: #4299e1;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .blog-title {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        .blog-meta {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .blog-content p {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        .full-content-img {
+            width: 100%;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .blog-img {
+                height: 200px;
+            }
+            .blog-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">我的博客</div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <div class="container">
+        <!-- 单篇博客 -->
+        <article class="blog-card">
+            <img src="DSCN7745.JPG" alt="高尔夫GTI" class="blog-img">
+            <span class="blog-category">高尔夫GTI</span>
+            <h2 class="blog-title">高尔夫GTI</h2>
+            <div class="blog-meta">
+                <span>发布时间：2026-03-01 | 作者：我</span>
+            </div>
+            <div class="blog-content">
+                <p>
+                    比美高1：64比例车模 高尔夫GTI 黑色
+                </p>
+                <img src="DSCN7750.JPG" alt="高尔夫GTI" class="full-content-img">
+                <p>
+                    高尔夫GTI非常好，动力强劲
+                </p>
+                <p>
+                   比美高性价比很高
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2026 我的个人博客 | 所有文章均为原创</p>
+    </footer>
+</body>
+</html>
