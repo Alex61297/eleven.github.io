@@ -97,6 +97,17 @@
             margin-top: 3rem;
         }
 
+        /* 音频控件样式（可选，隐藏默认控件） */
+        .bgm-audio {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            /* 隐藏默认音频控件，如需显示可删除下面两行 */
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
         /* 响应式适配 */
         @media (max-width: 768px) {
             .blog-img {
@@ -109,6 +120,13 @@
     </style>
 </head>
 <body>
+    <!-- 背景音乐控件 -->
+    <audio class="bgm-audio" id="bgmPlayer" loop>
+        <!-- 500miles.mp3 -->
+        <source src="500miles.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放，请升级浏览器！
+    </audio>
+
     <!-- 导航栏 -->
     <nav>
         <div class="logo">我的博客</div>
@@ -143,5 +161,33 @@
     <footer>
         <p>© 2026 我的个人博客 | 所有文章均为原创</p>
     </footer>
+
+    <script>
+        // 页面加载完成后自动播放BGM（适配浏览器自动播放策略）
+        window.addEventListener('DOMContentLoaded', function() {
+            const bgmPlayer = document.getElementById('bgmPlayer');
+            
+            // 尝试自动播放，处理浏览器自动播放限制
+            function playBGM() {
+                bgmPlayer.play().catch(err => {
+                    // 如果自动播放失败，添加点击/触摸事件触发播放（浏览器要求用户交互后才能播放音频）
+                    document.addEventListener('click', function playOnClick() {
+                        bgmPlayer.play();
+                        document.removeEventListener('click', playOnClick);
+                    }, { once: true });
+                    
+                    document.addEventListener('touchstart', function playOnTouch() {
+                        bgmPlayer.play();
+                        document.removeEventListener('touchstart', playOnTouch);
+                    }, { once: true });
+                });
+            }
+
+            playBGM();
+
+            // 可选：添加音量控制（默认音量0.5，避免音量过大）
+            bgmPlayer.volume = 0.5;
+        });
+    </script>
 </body>
 </html>
